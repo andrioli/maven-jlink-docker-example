@@ -10,4 +10,28 @@
 
 	<artifactId>maven-jlink-docker-example-app</artifactId>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<!--
+								Unfortunately, the current version of the plug-in do not
+								include ModuleMainClass attributes to module-info.
+
+								See: MJAR-238 for more details.
+							-->
+							<Main-Class>io.github.andrioli.HelloWorld</Main-Class>
+						</manifestEntries>
+					</archive>
+					<finalName>app</finalName>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
