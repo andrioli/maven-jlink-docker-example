@@ -2,10 +2,16 @@ language: java
 
 sudo: false
 
+services:
+  - docker
+
 jdk:
   - oraclejdk9
 
 install: true
+
+# docker-maven-plugin needs access to this module
+before_script: export MAVEN_OPTS="--add-modules java.activation"
 
 script: mvn verify
 

@@ -15,6 +15,7 @@
 
 	<modules>
 		<module>maven-jlink-docker-example-app</module>
+		<module>maven-jlink-docker-example-package</module>
 	</modules>
 
 </project>
