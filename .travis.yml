@@ -1,0 +1,14 @@
+language: java
+
+sudo: false
+
+jdk:
+  - oraclejdk9
+
+install: true
+
+script: mvn verify
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
