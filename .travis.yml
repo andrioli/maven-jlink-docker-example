@@ -13,7 +13,9 @@ install: true
 # docker-maven-plugin needs access to this module
 before_script: export MAVEN_OPTS="--add-modules java.activation"
 
-script: mvn verify
+script:
+  - mvn verify
+  - docker run -it --rm maven-jlink-docker-example
 
 cache:
   directories:

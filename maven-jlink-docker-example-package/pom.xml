@@ -9,38 +9,10 @@
 	</parent>
 
 	<artifactId>maven-jlink-docker-example-package</artifactId>
-	<packaging>pom</packaging>
+	<packaging>jlink</packaging>
 
 	<build>
 		<plugins>
-			<!--
-				Copy the application package so we can include it in the Docker image.
-				Module maven-jlink-docker-example-app MUST run before this module.
-			-->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.0.2</version>
-				<executions>
-					<execution>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>copy</goal>
-						</goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>${project.groupId}</groupId>
-									<artifactId>maven-jlink-docker-example-app</artifactId>
-									<version>${project.version}</version>
-									<destFileName>app.jar</destFileName>
-								</artifactItem>
-							</artifactItems>
-							<outputDirectory>${project.build.directory}</outputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
@@ -56,20 +28,32 @@
 				</executions>
 				<configuration>
 					<imageName>${project.parent.artifactId}</imageName>
-					<baseImage>openjdk:9-jre</baseImage>
+					<baseImage>debian:sid</baseImage>
+					<runs>
+						<run>
+							["chmod", "+x", "/jlink/bin/java"]
+						</run>
+					</runs>
 					<entryPoint>
-						["java", "-jar", "/app.jar"]
+						["/jlink/bin/java", "-m", "app/io.github.andrioli.HelloWorld"]
 					</entryPoint>
 					<resources>
 						<resource>
-							<targetPath>/</targetPath>
-							<directory>${project.build.directory}</directory>
-							<include>app.jar</include>
+							<targetPath>/jlink</targetPath>
+							<directory>${project.build.directory}/maven-jlink</directory>
 						</resource>
 					</resources>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>maven-jlink-docker-example-app</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
 
 </project>
