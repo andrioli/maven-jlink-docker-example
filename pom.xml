@@ -17,7 +17,7 @@
 		Adding Maven plugins SNAPSHOT repository.
 
 		The current version of maven-jlink-plugin avaiable at
-		Maven Central Repository (3.0.0-alpha-2) throws a NPE.
+		Maven Central Repository (3.0.0-alpha-1) throws a NPE.
 
 		The current SNAPSHOT version (3.0.0-alpha-2) is working.
 	-->

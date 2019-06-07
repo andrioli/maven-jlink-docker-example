@@ -18,5 +18,3 @@ This project shows how you can build a tiny Docker image with a custom modular J
 
 - The current version avaiable at Maven Central repository (3.0.0-alpha-1) has a bug (See: [MJLINK-4](https://issues.apache.org/jira/browse/MJLINK-4)). We're using a SNAPSHOT version (3.0.0-alpha-2) and unpredictable errors may occur with SNAPSHOT updates.
 - JDK `jmods` folder is always relative to `jlink` binary location and the generated Java run-time image may NOT be compatible with the Docker base image (See: [MJLINK-6](https://issues.apache.org/jira/browse/MJLINK-6)).
-
-[maven-jar-plugin](https://maven.apache.org/plugins/maven-jar-plugin/) don't know how to define a module with a main-class (See: [MJAR-238](https://issues.apache.org/jira/projects/MJAR/issues/MJAR-238)).

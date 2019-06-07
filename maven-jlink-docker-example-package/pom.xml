@@ -35,7 +35,7 @@
 						</run>
 					</runs>
 					<entryPoint>
-						["/jlink/bin/java", "-m", "app/io.github.andrioli.HelloWorld"]
+						["/jlink/bin/java", "-m", "app"]
 					</entryPoint>
 					<resources>
 						<resource>
