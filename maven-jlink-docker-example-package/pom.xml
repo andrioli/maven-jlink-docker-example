@@ -14,11 +14,28 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>com.googlecode.maven-download-plugin</groupId>
+				<artifactId>download-maven-plugin</artifactId>
+				<version>1.4.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>wget</goal>
+						</goals>
+						<configuration>
+							<url>https://download.java.net/java/GA/jdk9/9/binaries/openjdk-9_linux-x64_bin.tar.gz</url>
+							<sha1>ce6b38b77c18558c9dd3458d5e8be33ab59566e4</sha1>
+							<unpack>true</unpack>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<artifactId>maven-jlink-plugin</artifactId>
 				<version>3.0.0-alpha-2-SNAPSHOT</version>
 				<extensions>true</extensions>
 				<configuration>
-					<sourceJdkModules>${java.home}</sourceJdkModules>
+					<sourceJdkModules>${project.build.directory}/jdk-9</sourceJdkModules>
 				</configuration>
 			</plugin>
 			<plugin>
