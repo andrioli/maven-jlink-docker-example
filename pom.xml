@@ -11,6 +11,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>9</maven.compiler.source>
 		<maven.compiler.target>9</maven.compiler.target>
+		<download.url>https://download.java.net/java/GA/jdk9/9/binaries/openjdk-9_linux-x64_bin.tar.gz</download.url>
+		<download.sha1>ce6b38b77c18558c9dd3458d5e8be33ab59566e4</download.sha1>
+		<jdk.folder>jdk-9</jdk.folder>
 	</properties>
 
 	<!--
@@ -32,5 +35,20 @@
 		<module>maven-jlink-docker-example-app</module>
 		<module>maven-jlink-docker-example-package</module>
 	</modules>
+
+	<profiles>
+		<profile>
+			<activation>
+				<jdk>10</jdk>
+			</activation>
+			<properties>
+				<maven.compiler.source>10</maven.compiler.source>
+				<maven.compiler.target>10</maven.compiler.target>
+				<download.url>https://download.java.net/java/GA/jdk10/10/binaries/openjdk-10_linux-x64_bin.tar.gz</download.url>
+				<download.sha1>cd0f8de60eaecfc1465fedc0967f00432e133b77</download.sha1>
+				<jdk.folder>jdk-10</jdk.folder>
+			</properties>
+		</profile>
+	</profiles>
 
 </project>

@@ -23,8 +23,7 @@
 							<goal>wget</goal>
 						</goals>
 						<configuration>
-							<url>https://download.java.net/java/GA/jdk9/9/binaries/openjdk-9_linux-x64_bin.tar.gz</url>
-							<sha1>ce6b38b77c18558c9dd3458d5e8be33ab59566e4</sha1>
+							<sha1>${download.sha1}</sha1>
 							<unpack>true</unpack>
 						</configuration>
 					</execution>
@@ -35,7 +34,7 @@
 				<version>3.0.0-alpha-2-SNAPSHOT</version>
 				<extensions>true</extensions>
 				<configuration>
-					<sourceJdkModules>${project.build.directory}/jdk-9</sourceJdkModules>
+					<sourceJdkModules>${project.build.directory}/${jdk.folder}</sourceJdkModules>
 				</configuration>
 			</plugin>
 			<plugin>

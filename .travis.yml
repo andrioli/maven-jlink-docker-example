@@ -7,6 +7,7 @@ services:
 
 jdk:
   - oraclejdk9
+  - openjdk10 
 
 install: true
 
