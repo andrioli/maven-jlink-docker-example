@@ -38,6 +38,7 @@
 
 	<profiles>
 		<profile>
+			<id>jdk-10</id>
 			<activation>
 				<jdk>10</jdk>
 			</activation>
@@ -48,6 +49,37 @@
 				<download.sha1>cd0f8de60eaecfc1465fedc0967f00432e133b77</download.sha1>
 				<jdk.folder>jdk-10</jdk.folder>
 			</properties>
+		</profile>
+		<profile>
+			<id>jdk-11</id>
+			<activation>
+				<jdk>11</jdk>
+			</activation>
+			<properties>
+				<maven.compiler.source>11</maven.compiler.source>
+				<maven.compiler.target>11</maven.compiler.target>
+				<download.url>https://download.java.net/java/ga/jdk11/openjdk-11_linux-x64_bin.tar.gz</download.url>
+				<download.sha1>945db4d3e20a340448a1956041fda137d8939503</download.sha1>
+				<jdk.folder>jdk-11</jdk.folder>
+			</properties>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>com.spotify</groupId>
+							<artifactId>docker-maven-plugin</artifactId>
+							<version>1.0.0</version>
+							<dependencies>
+								<dependency>
+									<groupId>com.sun.activation</groupId>
+									<artifactId>javax.activation</artifactId>
+									<version>1.2.0</version>
+								</dependency>
+							</dependencies>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
 		</profile>
 	</profiles>
 

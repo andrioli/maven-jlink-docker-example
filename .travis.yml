@@ -8,11 +8,12 @@ services:
 jdk:
   - oraclejdk9
   - openjdk10 
+  - oraclejdk11
 
 install: true
 
 # docker-maven-plugin needs access to this module
-before_script: export MAVEN_OPTS="--add-modules java.activation"
+before_script: if [ "$TRAVIS_JDK_VERSION" = "oraclejdk9" ] || [ "$TRAVIS_JDK_VERSION" = "openjdk10" ]; then export MAVEN_OPTS="--add-modules java.activation"; fi
 
 script:
   - mvn verify
