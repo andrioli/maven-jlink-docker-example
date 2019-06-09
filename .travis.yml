@@ -7,8 +7,9 @@ services:
 
 jdk:
   - oraclejdk9
-  - openjdk10 
+  - openjdk10
   - oraclejdk11
+  - openjdk12
 
 install: true
 
