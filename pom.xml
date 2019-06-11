@@ -76,30 +76,6 @@
 				<jdk.folder>jdk-12</jdk.folder>
 			</properties>
 		</profile>
-		<profile>
-			<id>jdk-no-java.activation</id>
-			<activation>
-				<jdk>[11</jdk>
-			</activation>
-			<build>
-				<pluginManagement>
-					<plugins>
-						<plugin>
-							<groupId>com.spotify</groupId>
-							<artifactId>docker-maven-plugin</artifactId>
-							<version>1.0.0</version>
-							<dependencies>
-								<dependency>
-									<groupId>com.sun.activation</groupId>
-									<artifactId>javax.activation</artifactId>
-									<version>1.2.0</version>
-								</dependency>
-							</dependencies>
-						</plugin>
-					</plugins>
-				</pluginManagement>
-			</build>
-		</profile>
 	</profiles>
 
 </project>
