@@ -76,6 +76,19 @@
 				<jdk.folder>jdk-12</jdk.folder>
 			</properties>
 		</profile>
+		<profile>
+			<id>jdk-13</id>
+			<activation>
+				<jdk>13</jdk>
+			</activation>
+			<properties>
+				<maven.compiler.source>13</maven.compiler.source>
+				<maven.compiler.target>13</maven.compiler.target>
+				<download.url>https://download.java.net/java/GA/jdk13/5b8a42f3905b406298b72d750b6919f6/33/GPL/openjdk-13_linux-x64_bin.tar.gz</download.url>
+				<download.sha1>a420bb4ed91aa609eb4bf5a913b4e668f89a0e24</download.sha1>
+				<jdk.folder>jdk-13</jdk.folder>
+			</properties>
+		</profile>
 	</profiles>
 
 </project>
