@@ -6,11 +6,17 @@ services:
   - docker
 
 jdk:
-  - oraclejdk9
   - openjdk10
-  - oraclejdk11
+  - openjdk11
   - openjdk12
   - openjdk13
+
+matrix:
+  include:
+    - jdk: openjdk9
+      before_install:
+        - rm "${JAVA_HOME}/lib/security/cacerts"
+        - ln -s /etc/ssl/certs/java/cacerts "${JAVA_HOME}/lib/security/cacerts"
 
 install: true
 
