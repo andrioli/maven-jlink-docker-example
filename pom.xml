@@ -89,6 +89,19 @@
 				<jdk.folder>jdk-13</jdk.folder>
 			</properties>
 		</profile>
+		<profile>
+			<id>jdk-14</id>
+			<activation>
+				<jdk>14</jdk>
+			</activation>
+			<properties>
+				<maven.compiler.source>14</maven.compiler.source>
+				<maven.compiler.target>14</maven.compiler.target>
+				<download.url>https://download.java.net/java/GA/jdk14/076bab302c7b4508975440c56f6cc26a/36/GPL/openjdk-14_linux-x64_bin.tar.gz</download.url>
+				<download.sha1>1678dde2cd7796a9a81abe5cc77d53818459dc15</download.sha1>
+				<jdk.folder>jdk-14</jdk.folder>
+			</properties>
+		</profile>
 	</profiles>
 
 </project>
