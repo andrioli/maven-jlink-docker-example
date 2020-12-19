@@ -87,6 +87,19 @@
 				<jdk.folder>jdk-14</jdk.folder>
 			</properties>
 		</profile>
+		<profile>
+			<id>jdk-15</id>
+			<activation>
+				<jdk>15</jdk>
+			</activation>
+			<properties>
+				<maven.compiler.source>15</maven.compiler.source>
+				<maven.compiler.target>15</maven.compiler.target>
+				<download.url>https://download.java.net/java/GA/jdk15/779bf45e88a44cbd9ea6621d33e33db1/36/GPL/openjdk-15_linux-x64_bin.tar.gz</download.url>
+				<download.sha1>ad0f3fb8a3ca22311fe343cf469f3c47bdcbf4f1</download.sha1>
+				<jdk.folder>jdk-15</jdk.folder>
+			</properties>
+		</profile>
 	</profiles>
 
 </project>
