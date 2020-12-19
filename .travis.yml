@@ -1,6 +1,8 @@
 language: java
 
-sudo: false
+os: linux
+
+dist: xenial
 
 services:
   - docker
@@ -12,7 +14,7 @@ jdk:
   - openjdk13
   - openjdk14
 
-matrix:
+jobs:
   include:
     - jdk: openjdk9
       before_install:
