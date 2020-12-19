@@ -31,7 +31,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-jlink-plugin</artifactId>
-				<version>3.0.0-alpha-2-SNAPSHOT</version>
+				<version>3.0.0</version>
 				<extensions>true</extensions>
 				<configuration>
 					<sourceJdkModules>${project.build.directory}/${jdk.folder}</sourceJdkModules>

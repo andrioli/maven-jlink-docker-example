@@ -16,21 +16,6 @@
 		<jdk.folder>jdk-9</jdk.folder>
 	</properties>
 
-	<!--
-		Adding Maven plugins SNAPSHOT repository.
-
-		The current version of maven-jlink-plugin avaiable at
-		Maven Central Repository (3.0.0-alpha-1) throws a NPE.
-
-		The current SNAPSHOT version (3.0.0-alpha-2) is working.
-	-->
-	<pluginRepositories>
-		<pluginRepository>
-			<id>apache.snapshots</id>
-			<url>http://repository.apache.org/snapshots/</url>
-		</pluginRepository>
-	</pluginRepositories>
-
 	<modules>
 		<module>maven-jlink-docker-example-app</module>
 		<module>maven-jlink-docker-example-package</module>
